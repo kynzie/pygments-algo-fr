@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- coding: iso8859-15 -*-
 """
     pygments.lexers.algo
     ~~~~~~~~~~~~~~~~~~~
@@ -26,32 +26,38 @@ class AlgoLexer(RegexLexer):
     filenames = ['*.alg']
     mimetypes = ['text/plain']
 
+    flags = re.IGNORECASE | re.DOTALL
+
     tokens = {
         'root': [
-            (r'(module)(\s*)([^\s=]+)', bygroups(Keyword.Namespace, Text, Name.Namespace)),
-            (r'(var)(\s*)([^\s:]+)', bygroups(Keyword.Declaration, Text, Name.Variable)),
+            include('whitespace'),
+            (r'(algorithme)(\s*)([^\s]+)',bygroups(Keyword, Text, Name)),
             (r'\(\*', Comment.Multiline, 'comment'),
-            (r'[\+=\|\.\*\;\?-]', Operator),
-            (r'[\[\]\(\)\{\}]', Operator),
-            (r'"', String.Double, 'string'),
-            (r'\/', String.Regex, 'regex'),
-            (r'([A-Z]\w*)(\.)(\w+)', bygroups(Name.Namespace, Punctuation, Name.Variable)),
-            (r'.', Name.Variable),
-            (r'\s', Text),
+            (r'(fonction)(\s*)\(([^\s]+)\):([^\s]+)',bygroups(Keyword, Text, Name.Function, Keyword.Type)),
+            (r'entier|réel|chaîne|car|booléen',Keyword.Type),
+            (r'var',Keyword.Declaration),
+            (r'([^\s]+)(\s*)(:)',bygroups(Name.Variable, Text, Operator)),
+            (r'début',Keyword.Reserved,'block'),
+            (r'"',String.Double, 'string'),
+            (r',',Punctuation)
+        ],
+        'whitespace': [
+            (r'\n', Text),
+            (r'\s+', Text),
         ],
         'string': [
             (r'\\.', String.Escape),
             (r'[^"]', String.Double),
             (r'"', String.Double, '#pop'),
         ],
-        'regex': [
-            (r'\\.', String.Escape),
-            (r'[^\/]', String.Regex),
-            (r'\/', String.Regex, '#pop'),
-        ],
         'comment': [
             (r'[^*\)]', Comment.Multiline),
-            (r'[\*\)]', Comment.Single)
+            (r'\(\*', Comment.Multiline, '#push'),
+            (r'\*\)', Comment.Multiline, '#pop'),
+            (r'[\*\)]', Comment.Multiline)
         ],
+        'block':[
+            (r'fin',Keyword.Reserved,'#pop')
+        ]
     }
 
