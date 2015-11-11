@@ -2,26 +2,22 @@
 
 from setuptools import setup
 
-setup(name='pygments-github-lexers',
-      version='0.0.5',
-      description='Pygments Github custom lexers.',
-      keywords='pygments github lexer',
+setup(name='pygments-algo-lexer',
+      version='0.0.1',
+      description='Pygments algo lexer.',
+      keywords='pygments algo lexer',
       license='BSD',
 
-      author='Liluo',
-      author_email='i@liluo.org',
+      author='Jean THOMAS',
+      author_email='contact@tibounise.com',
 
-      url='https://github.com/liluo/pygments-github-lexers',
+      url='https://github.com/tibounise/pygments-algo-lexer',
 
-      packages=['pygments_github_lexers'],
+      packages=['pygments_algo_lexer'],
       install_requires=['pygments>=2.0.2'],
 
       entry_points='''[pygments.lexers]
-                      Dasm16Lexer=pygments_github_lexers:Dasm16Lexer
-                      PuppetLexer=pygments_github_lexers:PuppetLexer
-                      AugeasLexer=pygments_github_lexers:AugeasLexer
-                      TOMLLexer=pygments_github_lexers:TOMLLexer
-                      SlashLexer=pygments_github_lexers:SlashLexer''',
+                      AlgoLexer=pygments_algo_lexer:AlgoLexer''',
 
       classifiers=[
           'Environment :: Plugins',
