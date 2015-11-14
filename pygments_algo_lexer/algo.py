@@ -22,7 +22,7 @@ class AlgoLexer(RegexLexer):
     Simple lexer for "algo" algorithmic interpreter
     """
     name = 'algo'
-    aliases = ['Algo']
+    aliases = ['Algo','algo']
     filenames = ['*.alg']
     mimetypes = ['text/plain']
 
