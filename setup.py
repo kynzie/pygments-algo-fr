@@ -3,7 +3,7 @@
 from setuptools import setup
 
 setup(name='pygments-algo-lexer',
-      version='0.0.1',
+      version='1.0.0',
       description='Pygments algo lexer.',
       keywords='pygments algo lexer',
       license='BSD',
