@@ -35,10 +35,10 @@ class AlgoLexer(RegexLexer):
             include('headers'),
             include('comment'),
             include('data'),
+            include('operators'),
             include('ponctuation'),
             include('keywords'),
             include('functions'),
-            include('operators'),
             include('whitespace'),
             include('variables'),
         ],
@@ -89,7 +89,7 @@ class AlgoLexer(RegexLexer):
         ],
         'operators':[
             (r'(<-|/=|=|>|<|:|\+|-|/)',Operator),
-            (r'(et|ou|non|div|mod)',Operator.Word)
+            (r'\b(et|ou|non|div|mod)\b',Operator.Word)
         ]
     }
 
