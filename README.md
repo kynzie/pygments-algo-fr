@@ -27,7 +27,7 @@ pygmentize direbonjour.alg
 
 #### Dans un rapport LaTeX
 
-Pour inclure un algorithme dans un rapport LaTeX, on peut utiliser le package [minted](). minted étant basé sur Pygments, on peut donc utiliser `pygments-algo-lexer` comme lexer :
+Pour inclure un algorithme dans un rapport LaTeX, on peut utiliser le package [minted](https://github.com/gpoore/minted). minted utilisant en interne Pygments, on peut donc utiliser `pygments-algo-lexer` comme lexer :
 
 ```latex
 \usepackage{minted}
