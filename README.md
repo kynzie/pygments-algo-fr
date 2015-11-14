@@ -10,9 +10,17 @@ Un lexer pour un langage algorithmique français, à utiliser avec [Pygments](ht
 
 ### Installation
 
+#### Depuis le repository (instable)
+
 ```bash
 pip install -r "https://raw.githubusercontent.com/tibounise/pygments-algo-lexer/master/requirements.txt"
 pip install -UI -e "git+https://github.com/tibounise/pygments-algo-lexer.git#egg=pygments-algo-lexer"
+```
+
+#### Par release ("stable")
+
+```bash
+pip install https://github.com/tibounise/pygments-algo-lexer/archive/v1.0.0.tar.gz
 ```
 
 ### Utilisation
