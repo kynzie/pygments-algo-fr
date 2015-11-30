@@ -20,7 +20,7 @@ pip install -UI -e "git+https://github.com/tibounise/pygments-algo-lexer.git#egg
 #### Par release ("stable")
 
 ```bash
-pip install https://github.com/tibounise/pygments-algo-lexer/archive/v1.0.0.tar.gz
+pip install https://github.com/tibounise/pygments-algo-lexer/archive/v1.0.1.tar.gz
 ```
 
 ### Utilisation
