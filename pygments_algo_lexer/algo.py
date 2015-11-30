@@ -43,7 +43,7 @@ class AlgoLexer(RegexLexer):
             include('variables'),
         ],
         'ponctuation': [
-            (r'(,|;|\(|\))',Punctuation)
+            (r'(,|;|\(|\)|\[|\]|\.)',Punctuation)
         ],
         'headers': [
             (r'(algorithme)(\s*)('+stringIdentifierRegex+')',bygroups(Keyword, Text, Name)),
@@ -52,7 +52,7 @@ class AlgoLexer(RegexLexer):
         ],
         'keywords': [
             (r'\bd\xE9but|sinon|fin|tant que|faire|selon|pour|de|\xE0|si|alors\b', Keyword.Reserved),
-            (r'\bin|ex|entier|r\xE9el|chaîne|car|bool\xE9en\b',Keyword.Type),
+            (r'\bin|ex|const|entier|r\xE9el|chaîne|tableau|car|bool\xE9en\b',Keyword.Type),
             (r'\bvar\b',Keyword.Declaration),
             (r'\bfdl\b',Keyword.Constant)
         ],
