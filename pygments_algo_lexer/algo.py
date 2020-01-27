@@ -28,7 +28,8 @@ class AlgoLexer(RegexLexer):
 
     flags = re.IGNORECASE | re.DOTALL
 
-    stringIdentifierRegex = r'[\xC0-\xD6\xD8-\xF6\xF8-\xFFa-zA-Z_][\xC0-\xD6\xD8-\xF6\xF8-\xFFa-zA-Z0-9_]*'
+    stringIdentifierRegex = \
+        r'[\xC0\xC2\xC6-\xCB\xCE\xCF\xD4\xD9\xDB\xDC\xE0\xE2\xE6-\xEB\xEE\xEF\xF4\xF9\xFB\xFC\xFFa-zA-Z_0-9]+'
 
     tokens = {
         'root': [
