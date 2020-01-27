@@ -42,6 +42,7 @@ class AlgoLexer(RegexLexer):
             include('functions'),
             include('whitespace'),
             include('variables'),
+            include('builtins')
         ],
         'ponctuation': [
             (r'(,|;|\(|\)|\[|\]|\.)',Punctuation)
@@ -56,6 +57,9 @@ class AlgoLexer(RegexLexer):
             (r'\bsinon|fin si|fin tant que|fin pour|jusqu\'\xE0|tant que|faire|selon|pour|de|\xE0|si|alors|retourne\b', Keyword.Reserved),
             (r'\bentier|r\xE9el|cha\xEEne|tableau|bool\xE9en\b',Keyword.Type),
             (r'\bvariables\b',Keyword.Declaration),
+        ],
+        'builtins': [
+            (r'\blire|\xE9crire\b', Name.Builtin),
         ],
         'functions': [
             (r'('+stringIdentifierRegex+')(\s*)(\()', bygroups(Name.Function,Text,Punctuation))
