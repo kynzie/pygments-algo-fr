@@ -23,7 +23,7 @@ class AlgoLexer(RegexLexer):
     """
     name = 'algo'
     aliases = ['Algo','algo']
-    filenames = ['*.alg']
+    filenames = ['*.algo']
     mimetypes = ['text/plain']
 
     flags = re.IGNORECASE | re.DOTALL
