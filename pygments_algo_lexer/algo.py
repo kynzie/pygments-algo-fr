@@ -50,9 +50,10 @@ class AlgoLexer(RegexLexer):
             (r'(algorithme)(\s*)('+stringIdentifierRegex+')',bygroups(Keyword, Text, Name)),
             (r'(fonction)(\s*)('+stringIdentifierRegex+')',bygroups(Keyword, Text, Name.Function)),
             (r'(proc\xE9dure)(\s*)('+stringIdentifierRegex+')',bygroups(Keyword, Text, Name.Function)),
+            (r'(d\xE9but)(\s*)(fin)',bygroups(Keyword, Text, Keyword)),
         ],
         'keywords': [
-            (r'\bd\xE9but|sinon|fin|tant que|faire|selon|pour|de|\xE0|si|alors\b', Keyword.Reserved),
+            (r'\bsinon|tant que|faire|selon|pour|de|\xE0|si|alors\b', Keyword.Reserved),
             (r'\bin|ex|const|entier|r\xE9el|chaîne|tableau|car|bool\xE9en\b',Keyword.Type),
             (r'\bvar\b',Keyword.Declaration),
             (r'\bfdl\b',Keyword.Constant)
