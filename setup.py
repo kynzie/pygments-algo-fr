@@ -2,7 +2,7 @@
 
 from setuptools import setup
 
-setup(name='pygments-algo-lexer',
+setup(name='pygments-algo-fr',
       version='1.0.1',
       description='Pygments algo lexer for French language.',
       keywords='pygments algo lexer french',
@@ -13,11 +13,11 @@ setup(name='pygments-algo-lexer',
 
       url='https://github.com/kynzie/pygments-algo-fr',
 
-      packages=['pygments_algo_lexer'],
+      packages=['pygments_algo_fr'],
       install_requires=['pygments>=2.0.2'],
 
       entry_points='''[pygments.lexers]
-                      AlgoLexer=pygments_algo_lexer:AlgoLexer''',
+                      AlgoLexer=pygments_algo_fr:AlgoLexer''',
 
       classifiers=[
           'Environment :: Plugins',
