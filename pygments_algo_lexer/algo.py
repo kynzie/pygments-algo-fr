@@ -31,6 +31,17 @@ class AlgoLexer(RegexLexer):
     stringIdentifierRegex = \
         r'[\xC0\xC2\xC6-\xCB\xCE\xCF\xD4\xD9\xDB\xDC\xE0\xE2\xE6-\xEB\xEE\xEF\xF4\xF9\xFB\xFC\xFFa-zA-Z_0-9]+'
 
+    def op_replace(lexer, match):
+        op = match.group(0)
+
+        S = ('<-', '^')
+        R = ('\u2190', '\u2191')
+
+        if op in S:
+            op = R[S.index(op)]
+
+        yield match.start(), Operator, op
+
     tokens = {
         'root': [
             include('headers'),
@@ -92,7 +103,7 @@ class AlgoLexer(RegexLexer):
             (r'[\*\/]', Comment.Multiline)
         ],
         'operators':[
-            (r'(<-|=|>|<|:|\+|-|/|\^)',Operator),
+            (r'(<-|=|>|<|:|\+|-|/|\^)',op_replace),
             (r'\b(et|ou|non|div|mod)\b',Operator.Word)
         ]
     }
