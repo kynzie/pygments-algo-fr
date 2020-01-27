@@ -4,14 +4,14 @@ from setuptools import setup
 
 setup(name='pygments-algo-lexer',
       version='1.0.1',
-      description='Pygments algo lexer.',
-      keywords='pygments algo lexer',
+      description='Pygments algo lexer for French language.',
+      keywords='pygments algo lexer french',
       license='BSD',
 
-      author='Jean THOMAS',
-      author_email='contact@tibounise.com',
+      author='Alizée Penel',
+      author_email='alizee@lse.epita.fr',
 
-      url='https://github.com/tibounise/pygments-algo-lexer',
+      url='https://github.com/kynzie/pygments-algo-fr',
 
       packages=['pygments_algo_lexer'],
       install_requires=['pygments>=2.0.2'],
