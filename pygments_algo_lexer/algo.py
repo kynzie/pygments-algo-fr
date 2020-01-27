@@ -96,4 +96,3 @@ class AlgoLexer(RegexLexer):
             (r'\b(et|ou|non|div|mod)\b',Operator.Word)
         ]
     }
-
