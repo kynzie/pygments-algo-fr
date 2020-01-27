@@ -68,8 +68,7 @@ class AlgoLexer(RegexLexer):
             (stringIdentifierRegex, Name),
         ],
         'data': [
-            (r'"',String.Double, 'string'),
-            (r'(\')([^\'])(\')',bygroups(String.Simple, Text, String.Simple)),
+            (r"'",String.Simple, 'simple-quoted-strings'),
             (r'(\d\.\d)',Number.Float),
             (r'\d',Number.Integer),
         ],
@@ -77,10 +76,10 @@ class AlgoLexer(RegexLexer):
             (r'\n', Text),
             (r'\s+', Text),
         ],
-        'string': [
+        'simple-quoted-strings': [
             (r'\\.', String.Escape),
-            (r'[^"]', String.Double),
-            (r'"', String.Double, '#pop'),
+            (r"[^']", String.Simple),
+            (r"'", String.Simple, '#pop'),
         ],
         'comment': [
             (r'\(\*', Comment.Multiline, 'commentblock'),
