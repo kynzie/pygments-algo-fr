@@ -82,14 +82,14 @@ class AlgoLexer(RegexLexer):
             (r"'", String.Simple, '#pop'),
         ],
         'comment': [
-            (r'\(\*', Comment.Multiline, 'commentblock'),
+            (r'\/\*', Comment.Multiline, 'commentblock'),
             (r'--([^\n]*)', Comment.Single)
         ],
         'commentblock': [
-            (r'[^*\)]', Comment.Multiline),
-            (r'\(\*', Comment.Multiline, '#push'),
-            (r'\*\)', Comment.Multiline, '#pop'),
-            (r'[\*\)]', Comment.Multiline)
+            (r'[^*\/]', Comment.Multiline),
+            (r'\/\*', Comment.Multiline, '#push'),
+            (r'\*\/', Comment.Multiline, '#pop'),
+            (r'[\*\/]', Comment.Multiline)
         ],
         'operators':[
             (r'(<-|/=|=|>|<|:|\+|-|/)',Operator),
