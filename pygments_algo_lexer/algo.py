@@ -53,7 +53,7 @@ class AlgoLexer(RegexLexer):
             (r'(d\xE9but)(\s*)(fin)',bygroups(Keyword, Text, Keyword)),
         ],
         'keywords': [
-            (r'\bsinon|fin si|fin tant que|fin pour|jusqu\'\xE0|tant que|faire|selon|pour|de|\xE0|si|alors\b', Keyword.Reserved),
+            (r'\bsinon|fin si|fin tant que|fin pour|jusqu\'\xE0|tant que|faire|selon|pour|de|\xE0|si|alors|retourne\b', Keyword.Reserved),
             (r'\bin|ex|const|entier|r\xE9el|chaîne|tableau|car|bool\xE9en\b',Keyword.Type),
             (r'\bvar\b',Keyword.Declaration),
             (r'\bfdl\b',Keyword.Constant)
