@@ -92,7 +92,7 @@ class AlgoLexer(RegexLexer):
             (r'[\*\/]', Comment.Multiline)
         ],
         'operators':[
-            (r'(<-|=|>|<|:|\+|-|/)',Operator),
+            (r'(<-|=|>|<|:|\+|-|/|\^)',Operator),
             (r'\b(et|ou|non|div|mod)\b',Operator.Word)
         ]
     }
