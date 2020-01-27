@@ -65,7 +65,7 @@ class AlgoLexer(RegexLexer):
             (r'('+stringIdentifierRegex+')(\s*)(\()', bygroups(Name.Function,Text,Punctuation))
         ],
         'variables': [
-            (stringIdentifierRegex, Name.Variable),
+            (stringIdentifierRegex, Name),
         ],
         'data': [
             (r'"',String.Double, 'string'),
