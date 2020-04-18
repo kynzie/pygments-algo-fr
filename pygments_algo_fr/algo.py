@@ -66,7 +66,7 @@ class AlgoLexer(RegexLexer):
         ],
         'keywords': [
             (r'\bsinon|fin si|fin tant que|fin pour|jusqu\'\xE0|tant que|faire|selon|pour|de|\xE0|si|alors|retourne\b', Keyword.Reserved),
-            (r'\bentier|r\xE9el|cha\xEEne|tableau|bool\xE9en\b',Keyword.Type),
+            (r'\bentier|r\xE9el|cha\xEEne|tableau|bool\xE9en|\xE9l\xE9ment|liste\b',Keyword.Type),
             (r'\bvariables\b',Keyword.Declaration),
         ],
         'builtins': [
